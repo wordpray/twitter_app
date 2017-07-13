@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length: {maximum: 50}
+  validates :nickname,length: {maximum: 50}
+  validates :email, presence: true, length: {maximum: 255}
+  validates :introduction, length: {maximum: 140}
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
