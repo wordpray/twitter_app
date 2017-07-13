@@ -7,6 +7,9 @@
   %body
     = render 'layouts/header'
 .container
+  - flash.each do |message_type, message|
+    %p.alert{class: "alert-#{message_type}"}
+      = message
   = yield
   = debug(params) if Rails.env.development?
 
