@@ -1,0 +1,9 @@
+%header.navbar.navbar-fixed-top.navbar-default
+  .header__container
+    = link_to image_tag("twitter.png", size:"30x30", alt:"Twitter logo", id: "twitter__logo"),"#"
+    %header__nav
+      %ul.nav.navbar-nav.navbar-left
+        %li= link_to "", root_url, class: "glyphicon glyphicon-home btn-lg"
+    %header__nav
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to "Log in", "#"
