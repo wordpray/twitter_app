@@ -12,16 +12,8 @@
       - if @feed_items.any?
         %ol.tweets
         - @feed_items.each do |tweet|
-          %li{:id => "tweet-#{tweet.id}"}
-            = image_tag current_user.avatar.url(:thumb), class: "user-profile__post"
-            %span.user= link_to tweet.user.name, tweet.user
-            %span.content= tweet.content
-            /= image_tag tweet.image.url(:medium) if tweet.image?
-            %span.timestamp
-              Posted #{time_ago_in_words(tweet.created_at)} ago.
-            = if user_signed_in? && current_user.id == tweet.user_id
-              = link_to "delete", tweet_path(tweet.id), method: :delete, data: { confirm: "You sure?" }
-
+          %li
+            = tweet.content
 -else
   .center.jumbotron
     %h1 Twitter App
