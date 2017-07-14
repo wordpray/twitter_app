@@ -16,4 +16,8 @@ class User < ApplicationRecord
                       styles:  { medium: "300x300#", thumb: "100x100#" }
   validates_attachment_content_type :wallpaper,
                                       content_type: ["image/jpg","image/jpeg","image/png"]
+
+  def feed
+    Tweet.where("user_id=?", id)
+  end
 end
