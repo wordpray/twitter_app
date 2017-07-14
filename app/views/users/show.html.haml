@@ -6,3 +6,9 @@
       %h1
         = image_tag @user.avatar.url(:thumb), class: "user-profile"
         = @user.name
+  .col-md-8
+    -if @user.tweets.any?
+      %h3 Tweets
+      = @user.tweets.count
+      %ol.tweets
+        = render 'shared/tweet', locals: { tweets: @tweets }
