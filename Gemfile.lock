@@ -86,6 +86,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -246,6 +248,7 @@ DEPENDENCIES
   capistrano3-unicorn
   coffee-rails (~> 4.2)
   devise
+  faker
   font-awesome-rails
   haml-rails (~> 0.9)
   jbuilder (~> 2.5)
