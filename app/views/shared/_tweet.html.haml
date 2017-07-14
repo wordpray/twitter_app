@@ -3,7 +3,7 @@
     = image_tag @user.avatar.url(:thumb), class: "user-profile"
     %span.user= link_to tweet.user.name, tweet.user
     %span.content= tweet.content
-    / = image_tag tweet.image.url(:medium) if tweet.image?
+    = image_tag tweet.image.url(:medium) if tweet.image?
     %span.timestamp
       Posted #{time_ago_in_words(tweet.created_at)} ago.
     = if user_signed_in? && current_user.id == tweet.user_id
