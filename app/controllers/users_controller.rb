@@ -22,4 +22,11 @@ class UsersController < ApplicationController
     @users = @user.followers
     render 'show_follow'
   end
+
+  def likes
+    @title = "Likes"
+    @user = User.find(params[:id])
+    @likes = @user.like_tweets
+    render 'show_likes'
+  end
 end
