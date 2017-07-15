@@ -5,13 +5,15 @@
     %aside.col-md-4
       %section.user_info
         = render 'shared/user_info'
+      %section.stats
+        = render 'shared/stats'
       %section.tweet_form
         = render 'shared/tweet_form'
     .col-md-8
       %h3 Tweet Feed
-      - if @feed_items.any?
+      - if @tweets.any?
         %ol.tweets
-        - @feed_items.each do |tweet|
+        - @tweets.each do |tweet|
           %li{:id => "tweet-#{tweet.id}"}
             = image_tag current_user.avatar.url(:thumb), class: "user-profile__post"
             %span.user= link_to tweet.user.name, tweet.user

@@ -6,7 +6,10 @@
       %h1
         = image_tag @user.avatar.url(:thumb), class: "user-profile"
         = @user.name
+    %section.stats
+      = render 'shared/stats'
   .col-md-8
+    = render 'shared/follow_form' if user_signed_in?
     -if @user.tweets.any?
       %h3 Tweets
       = @user.tweets.count
