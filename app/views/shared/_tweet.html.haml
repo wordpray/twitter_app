@@ -1,4 +1,4 @@
-- @tweets.each do |tweet|
+- tweets.each do |tweet|
   %li{:id => "tweet-#{tweet.id}"}
     = image_tag @user.avatar.url(:thumb), class: "user-profile"
     %span.user= link_to tweet.user.name, tweet.user
@@ -8,4 +8,4 @@
       Posted #{time_ago_in_words(tweet.created_at)} ago.
     - if user_signed_in? && current_user.id == tweet.user_id
       = link_to "delete", tweet_path(tweet.id), method: :delete, data: { confirm: "You sure?" }
-
+    = render 'likes/like', tweet: tweet, likes: @likes
