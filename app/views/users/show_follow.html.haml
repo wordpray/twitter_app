@@ -3,7 +3,7 @@
 .row
   %aside.col-md-4
     %section.user_info
-      = image_tag @user.avatar.url(:thumb), class: "user-profile"
+      = render 'shared/avatar_judge', user: @user
       %h1= @user.name
     %section.stats
       = render 'shared/stats'
