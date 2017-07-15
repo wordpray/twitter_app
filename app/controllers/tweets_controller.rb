@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   def home
     if user_signed_in?
       @tweet = current_user.tweets.new if user_signed_in?
-      @feed_items = current_user.feed
+      @tweets = current_user.feed
     end
   end
 
