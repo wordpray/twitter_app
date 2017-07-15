@@ -14,4 +14,4 @@
       %h3 Tweets
       = @user.tweets.count
       %ol.tweets
-        = render 'shared/tweet', locals: { tweets: @tweets }
+        = render 'shared/tweet', tweets: @tweets

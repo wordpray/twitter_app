@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets
+    @likes = Like.where(tweet_id: params[:tweet_id])
   end
 
   def following

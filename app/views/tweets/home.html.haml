@@ -1,33 +1,6 @@
 - provide(:title, "Home")
 
 - if user_signed_in?
-  .row
-    %aside.col-md-4
-      %section.user_info
-        = render 'shared/user_info'
-      %section.stats
-        = render 'shared/stats'
-      %section.tweet_form
-        = render 'shared/tweet_form'
-    .col-md-8
-      %h3 Tweet Feed
-      - if @tweets.any?
-        %ol.tweets
-        - @tweets.each do |tweet|
-          %li{:id => "tweet-#{tweet.id}"}
-            = image_tag current_user.avatar.url(:thumb), class: "user-profile__post"
-            %span.user= link_to tweet.user.name, tweet.user
-            %span.content= tweet.content
-            = image_tag tweet.image.url(:medium) if tweet.image?
-            %span.timestamp
-              Posted #{time_ago_in_words(tweet.created_at)} ago.
-            - if user_signed_in? && current_user.id == tweet.user_id
-              = link_to "delete", tweet_path(tweet.id), method: :delete, data: { confirm: "You sure?" }
-
+  = render 'tweets/user_logged_in'
 -else
-  .center.jumbotron
-    %h1 Twitter App
-
-    = link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary"
-
-    = link_to image_tag("twitter.png", size:"30x30",alt:"Twitter logo"),"#"
+  = render 'tweets/user_not_logged_in'
