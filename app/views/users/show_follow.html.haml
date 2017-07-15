@@ -1,14 +1,15 @@
 - provide(:title, @title)
 
 .row
-  .col-md-4
+  %aside.col-md-4
     %section.user_info
-      = image_tag current_user.avatar.url(:thumb), class: "user-profile__post"
+      = image_tag @user.avatar.url(:thumb), class: "user-profile"
       %h1= @user.name
-      %span= link_to "view my profile", @user
     %section.stats
       = render 'shared/stats'
   .col-md-8
+    = render 'shared/follow_form' if user_signed_in?
+    = render 'profile_header'
     %h3= @title
     - if @users.any?
       %ul.users.follow

@@ -1,4 +1,4 @@
-- provide(:title, @user.name)
+- provide(:title, @title)
 
 .row
   %aside.col-md-4
@@ -10,8 +10,8 @@
   .col-md-8
     = render 'shared/follow_form' if user_signed_in?
     = render 'profile_header'
-    -if @user.tweets.any?
-      %h3 Tweets
-      = @user.tweets.count
+    -if @likes.any?
+      %h3= @title
+      = @likes.count
       %ol.tweets
-        = render 'shared/tweet', tweets: @tweets
+        = render 'shared/tweet', tweets: @likes

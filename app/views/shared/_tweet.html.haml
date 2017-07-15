@@ -1,6 +1,6 @@
 - tweets.each do |tweet|
   %li{:id => "tweet-#{tweet.id}"}
-    = image_tag @user.avatar.url(:thumb), class: "user-profile"
+    = image_tag tweet.user.avatar.url(:thumb), class: "user-profile"
     %span.user= link_to tweet.user.name, tweet.user
     %span.content= tweet.content
     = image_tag tweet.image.url(:medium) if tweet.image?
