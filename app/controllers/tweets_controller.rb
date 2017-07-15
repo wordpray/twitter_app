@@ -1,8 +1,10 @@
 class TweetsController < ApplicationController
   def home
     if user_signed_in?
+      @user = current_user
       @tweet = current_user.tweets.new if user_signed_in?
-      @tweets = current_user.feed
+      @feed_items = current_user.feed
+      @likes = Like.where(tweet_id: params[:tweet_id])
     end
   end
 
