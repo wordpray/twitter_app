@@ -1,0 +1,4 @@
+-if user.avatar?
+  = image_tag user.avatar.url(:thumb), class: "user-profile"
+-else
+  = image_tag("icon.png", size:"100x100",alt:"icon-avatar", class: "user-profile")
