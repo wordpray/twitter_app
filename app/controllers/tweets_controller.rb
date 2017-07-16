@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
   def home
     if user_signed_in?
       @user = current_user
+      @recommend_users = User.all.limit(5)
       @tweet = current_user.tweets.new if user_signed_in?
       @feed_items = current_user.feed
       @likes = Like.where(tweet_id: params[:tweet_id])

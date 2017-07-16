@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_action :set_users, only: [:show, :following, :followers, :likes]
+
   def index
     @users = User.all
   end
@@ -28,5 +30,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @likes = @user.like_tweets
     render 'show_likes'
+  end
+
+  private
+
+  def set_users
+    @recommend_users = User.all.limit(5)
   end
 end
