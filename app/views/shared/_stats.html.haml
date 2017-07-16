@@ -1,14 +1,14 @@
 - @user ||= current_user
 .stats
   %a{href: "/users/#{@user.id}"}
+    ツイート
     %strong#tweets.stat
       = @user.tweets.count
-    ツイート
   %a{href: "#{following_user_path(@user)}"}
+    フォロー
     %strong#following.stat
       = @user.following.count
-    フォロー
   %a{href: "#{followers_user_path(@user)}"}
+    フォロワー
     %strong#followers.stat
       = @user.followers.count
-    フォロワー

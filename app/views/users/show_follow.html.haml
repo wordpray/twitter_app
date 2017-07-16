@@ -1,18 +1,20 @@
 - provide(:title, @title)
 
 .row
-  %aside.col-md-4
+  %aside.col-md-3
     %section.user_info
-      = render 'shared/avatar_judge', user: @user
-      %h1= @user.name
+      = render 'shared/others_info', user: @user
     %section.stats
       = render 'shared/stats'
-  .col-md-8
-    = render 'shared/follow_form' if user_signed_in?
-    = render 'profile_header'
-    %h3= @title
-    - if @users.any?
-      %ul.users.follow
-        - @users.each do |user|
-          %li
-            = render 'shared/profile', user: user
+  .col-md-6
+    %section.detail-info
+      = render 'profile_header'
+      %h3= @title
+      - if @users.any?
+        %ul.users.follow
+          - @users.each do |user|
+            %li
+              = render 'shared/profile', user: user
+  .col-md-3
+    %section.recommend_info
+      = render 'shared/recommend_info', users: @recommend_users

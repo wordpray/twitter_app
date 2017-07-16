@@ -1,18 +1,19 @@
 - @user ||= current_user
 .stats
   %a{href: "/users/#{@user.id}"}
+    ツイート
     %strong#tweets.stat
       = @user.tweets.count
-    ツイート
   %a{href: "#{following_user_path(@user.id)}"}
+    フォロー
     %strong#following.stat
       = @user.following.count
-    フォロー
   %a{href: "#{followers_user_path(@user.id)}"}
+    フォロワー
     %strong#followers.stat
       = @user.followers.count
-    フォロワー
   %a{href: "#{likes_user_path(@user.id)}"}
+    いいね
     %strong#followers.stat
       = @user.like_tweets.count
-    いいね
+  = render 'shared/follow_form' if user_signed_in?

@@ -1,13 +1,15 @@
 .row
-  %aside.col-md-4
+  %aside.col-md-3
     %section.user_info
       = render 'shared/user_info'
     %section.stats
       = render 'shared/stats'
+  .col-md-6
     %section.tweet_form
       = render 'shared/tweet_form'
-  .col-md-8
     %h3 Tweet Feed
     - if @feed_items.any?
-      %ol.tweets
-        = render 'shared/tweet', tweets: @feed_items
+      = render 'shared/tweet', tweets: @feed_items
+  .col-md-3
+    %section.recommend_info
+      = render 'shared/recommend_info', users: @recommend_users
