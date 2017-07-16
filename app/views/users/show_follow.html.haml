@@ -15,5 +15,4 @@
       %ul.users.follow
         - @users.each do |user|
           %li
-            = image_tag user.avatar.url(:thumb), class: "user-profile"
-            = link_to user.name, user
+            = render 'shared/profile', user: user
