@@ -1,8 +1,9 @@
 class TweetsController < ApplicationController
+before_action :set_users, only: [:home, :create]
+
   def home
     if user_signed_in?
       @user = current_user
-      @recommend_users = User.all.limit(5)
       @tweet = current_user.tweets.new if user_signed_in?
       @feed_items = current_user.feed
       @likes = Like.where(tweet_id: params[:tweet_id])
@@ -36,5 +37,9 @@ class TweetsController < ApplicationController
 
   def tweet_params
     params.require(:tweet).permit(:content, :image)
+  end
+
+  def set_users
+    @recommend_users = User.all.limit(5)
   end
 end
