@@ -7,8 +7,8 @@
   .col-md-6
     %section.tweet_form
       = render 'shared/tweet_form'
-    %h3 Tweet Feed
     - if @feed_items.any?
+      %h3 Tweet Feed
       = render 'shared/tweet', tweets: @feed_items
   .col-md-3
     %section.recommend_info
