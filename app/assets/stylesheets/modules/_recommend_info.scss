@@ -1,0 +1,25 @@
+.recommend_info {
+  margin-top: 15px;
+  border: 5px solid #f8f8f8;
+  padding: 5px;
+  h4{
+    font-weight: bold;}
+  ul{
+    list-style: none;
+    margin: 0;
+    li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    img{
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+    }
+   }
+   .message{
+      text-align: center;
+      padding: 10px;
+    }
+}

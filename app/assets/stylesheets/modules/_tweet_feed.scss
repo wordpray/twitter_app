@@ -1,62 +1,3 @@
-/* universal */
-
-body{
-  padding-top: 60px;
-}
-
-header{
-  height: 46px;
-}
-
-section{
-  overflow: auto;
-}
-
-textarea{
-  resize: vertical;
-}
-
-.center.jumbotron{
-  background-color: #fff;
-}
-
-.center{
-  text-align: center;
-}
-
-.center h1{
-  margin-bottom: 10px;
-}
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-/* tweets */
-
 .tweets {
   list-style: none;
   padding: 0;
@@ -71,11 +12,12 @@ p {
   .content {
     display: block;
     margin-left: 60px;
-    img {
+  }
+  .img {
       display: block;
       padding: 5px 0;
+      border-radius: 10px;
     }
-  }
   .timestamp {
     color: #d3d3d3;
     display: block;
@@ -87,6 +29,7 @@ p {
     margin-top: 5px;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
   }
 }
 
@@ -108,5 +51,8 @@ ol.tweets{
   li{
     list-style: none;
   }
-  
+}
+
+.detail-info{
+  margin-top: 20px;
 }

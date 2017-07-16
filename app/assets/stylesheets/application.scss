@@ -1,11 +1,15 @@
 @import "reset";
 @import "variable";
-@import "modules/tweets";
+@import "modules/body";
 @import "modules/posts";
 @import "modules/form";
-@import "modules/sidebar";
 @import "modules/header";
+@import "modules/sidebar";
 @import "modules/search_form";
+@import "modules/tweet_form";
+@import "modules/tweet_feed";
+@import "modules/follow_button";
+@import "modules/recommend_info";
 @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
