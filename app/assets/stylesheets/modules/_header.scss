@@ -1,0 +1,34 @@
+/* header */
+
+.header.container{
+  text-align: center;
+  padding-top: 10px;
+}
+
+header.nav{
+  .nav.navbar-nav.navbar-center{
+    position: relative;
+    margin-top: 10px;
+    left: 50%;
+    float: left;
+    transform: translateX(-50%);
+    .twitter-logo:hover {
+    color: #fff;
+    text-decoration: none;
+    }
+  }
+  #tweet-button{
+    margin-left: 5px;
+    padding: 6px 20px;
+    margin-top: 9px;
+    background-color: #1da1f2;
+    border: 1px solid #1da1f2;
+    border-radius: 20px;
+  }
+  .user-profile__header{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+  }
+}
