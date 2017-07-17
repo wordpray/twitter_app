@@ -1,37 +1,47 @@
 - provide(:title, "Sign up")
 
-.jumbotron
-  .container
-  %h2 Sign up
+.container.sign-up
   .row
-    .col-md-6.col-md-offset-3
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .field
-          = f.label :name
-          %br/
-          = f.text_field :name, autofocus: true, class: 'form-control'
-        .field
-          = f.label :nickname
-          %br/
-          = f.text_field :nickname, autofocus: true, class: 'form-control'
-        .field
-          = f.label :email
-          %br/
-          = f.email_field :email, autofocus: true, class: 'form-control'
-        .field
-          = f.label :password
-          - if @minimum_password_length
+    .col-md-7
+      .section.sign-up__introduction
+        %h2 Twitter（仮）へようこそ
+        %p 「いま」起きていることを見つけよう。国内のニュースから身近なできごとまで、みんなの話題がわかる。
+    .col-md-4
+      .section.sign-up__form
+        %h2 Sign up
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .field
+            = f.label :name
+            %br/
+            = f.text_field :name, autofocus: true, class: 'form-control', placeholder: "name"
+          .field
+            = f.label :nickname
+            %br/
+            = f.text_field :nickname, autofocus: true, class: 'form-control', placeholder: "nickname(表示名)"
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "email"
+          .field
+            = f.label :password
+            - if @minimum_password_length
+              %em
+                (最小#{@minimum_password_length} 文字以上)
+            %br/
+            = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "password"
+          .field
+            = f.label :password_confirmation
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',  placeholder: "password_confirmation"
+          .field
+            = f.label :avatar
+            = f.file_field :avatar, class: 'form-control'
+          .field
+            = f.label :introduction
             %em
-              (#{@minimum_password_length} characters minimum)
-          %br/
-          = f.password_field :password, autocomplete: "off", class: 'form-control'
-        .field
-          = f.label :password_confirmation
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-        .field
-          = f.file_field :avatar
-        .actions
-          = f.submit "Sign up", class: "btn btn-primary"
-        = render "devise/shared/links"
+              (140字以内)
+            = f.text_area :introduction, class: 'form-control', rows: "4",  placeholder: "みんなに自己紹介をしよう！"
+          .actions
+            = f.submit "Sign up", class: "btn btn-primary btn-sm", id: "submit-button"
+      .col-md-1
