@@ -1,0 +1,16 @@
+.container.sign-up{
+  margin-top: 10px;
+  .sign-up__form{
+    margin: 5px;
+    .checkbox-inline{
+      margin-left: 20px;
+      }
+    .actions{
+      margin-bottom: 30px;
+      a{
+      font-size: 14px;
+      float: right;
+    }
+    }
+  }
+}
