@@ -1,0 +1,43 @@
+.user-card {
+  margin: 5px;
+  width: 180px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  &__wallpaper {
+    border-radius: 5px 5px 0 0;
+    max-width: 100%;
+    height: 100px;
+    }
+  &__icon{
+    margin-top: -30px;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    }
+  &__content {
+    }
+  &__title {
+    font-size: 18px;
+    margin-right: 5px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #333;
+    }
+  &__text {
+    height: 100px;
+    overflow: hidden;
+    color: #777;
+    font-size: 12px;
+    padding: 5px;
+    line-height: 1.5;
+    }
+  &__created-at {
+    color: #777;
+    text-align: center;
+    padding-bottom: 10px;
+    }
+}
