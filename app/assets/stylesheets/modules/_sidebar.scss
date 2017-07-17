@@ -41,6 +41,12 @@ aside {
 .user-profile {
   float: left;
   margin-right: 10px;
+  border-radius: 50%;
+}
+
+.user-introduction{
+  padding-top: 10px;
+  font-size: 1.0em;
 }
 
 .user-profile__edit {
