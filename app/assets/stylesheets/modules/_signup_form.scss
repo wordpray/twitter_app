@@ -1,0 +1,49 @@
+.sign-up{
+  background-image: url(background-image1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.sign-up__introduction{
+  color: #fff;
+  padding: 10px;
+  margin: 100px 30px 10px;
+  h2{
+    text-align: left;
+    margin-bottom: 30px;
+  }
+}
+
+.sign-up__form{
+   color: #fff;
+  padding: 30px;
+  h2{
+    font-size: 26px;
+  }
+  .field{
+    padding: 5px;
+    label{
+      font-size: 12px;
+    }
+  }
+  .actions{
+    width: 150px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    #submit-button{
+      border-radius: 40px;
+    }
+    #submit-button:hover{
+      text-decoration: none;
+    }
+    .actions:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
