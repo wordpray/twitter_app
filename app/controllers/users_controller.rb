@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 before_action :set_users, only: [:show, :following, :followers, :likes]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page], per_page: 32)
   end
 
   def show

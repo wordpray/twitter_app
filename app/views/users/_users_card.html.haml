@@ -10,7 +10,7 @@
       = image_tag("icon.png", size:"100x100",alt:"user-card-avatar", class: "user-card__icon")
     .user-card__follow
     .user-card__content
-      %h1.user-card__title= user.nickname
+      = link_to user_path(user) do
+        %h1.user-card__title= user.nickname
       %p.user-card__text= user.introduction
-    .user-card__created-at
-      2017/1/1
+    .user-card__created-at #{user.created_at.strftime("%Y/%m")} 登録
