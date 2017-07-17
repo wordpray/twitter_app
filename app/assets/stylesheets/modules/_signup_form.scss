@@ -1,15 +1,16 @@
-// .sign-up{
-//   background-image: url(background-image2.png);
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-// }
-
-.row.jumbotron{
-  background-color: #f8f8f8;
+.sign-up{
+  background-image: url(background-image2.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+// .row.jumbotron{
+//   background-color: #f8f8f8;
+// }
+
 .sign-up__introduction{
+  color: #fff;
   padding: 10px;
   margin: 100px 30px 10px;
   h2{
@@ -19,6 +20,7 @@
 }
 
 .sign-up__form{
+  color: #fff;
   padding: 30px;
   h2{
     font-size: 26px;
