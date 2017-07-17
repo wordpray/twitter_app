@@ -11,7 +11,6 @@
       = render 'profile_header'
       %h3= @title
       -if @likes.any?
-        = @likes.count
         %ol.tweets
           = render 'shared/tweet', tweets: @likes
   .col-md-3
