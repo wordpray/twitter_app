@@ -9,12 +9,11 @@
   .col-md-6
     %section.detail-info
       = render 'profile_header'
-      %h3= @title
-      - if @users.any?
-        %ul.users.follow
-          - @users.each do |user|
-            %li
-              = render 'shared/profile', user: user
+    %h3= @title
+    - if @users.any?
+      .row
+      - @users.each do |user|
+        =render 'users/users_card', user: user
   .col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users
