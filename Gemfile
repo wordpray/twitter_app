@@ -68,3 +68,5 @@ gem 'bootstrap-sass', '3.3.6'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'paperclip'
+gem 'will_paginate', '3.1.5'
+gem 'bootstrap-will_paginate', '0.0.10'
