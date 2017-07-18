@@ -14,26 +14,26 @@
           .field
             = f.label :name
             %br/
-            = f.text_field :name, autofocus: true, class: 'form-control', placeholder: "name"
+            = f.text_field :name, autofocus: true, class: 'form-control', placeholder: "name", required: true
           .field
             = f.label :nickname
             %br/
-            = f.text_field :nickname, autofocus: true, class: 'form-control', placeholder: "nickname(表示名)"
+            = f.text_field :nickname, autofocus: true, class: 'form-control', placeholder: "nickname(表示名)",required: true
           .field
             = f.label :email
             %br/
-            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "email"
+            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "email", required: true
           .field
             = f.label :password
             - if @minimum_password_length
               %em
                 (最小#{@minimum_password_length} 文字以上)
             %br/
-            = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "password"
+            = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "password", required: true
           .field
             = f.label :password_confirmation
             %br/
-            = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',  placeholder: "password_confirmation"
+            = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',  placeholder: "password_confirmation", required: true
           .field
             = f.label :avatar
             = f.file_field :avatar, class: 'form-control'

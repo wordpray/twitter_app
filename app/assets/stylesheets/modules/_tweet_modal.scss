@@ -1,0 +1,11 @@
+.modal-open{
+  .modal-dialog{
+  margin: 80px auto;
+  .modal-body{
+  padding: 15px 15px 60px;
+  }
+}
+.modal-backdrop {
+  z-index: 100;
+}
+}
