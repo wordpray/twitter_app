@@ -11,8 +11,7 @@
       = render 'profile_header'
       %h3= @title
       -if @likes.any?
-        %ol.tweets
-          = render 'shared/tweet', tweets: @likes
+        = render 'shared/tweet', tweets: @likes
   .col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users
