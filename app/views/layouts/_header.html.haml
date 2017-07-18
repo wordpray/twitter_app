@@ -27,8 +27,19 @@
                 %li
                   = link_to "Log out", destroy_user_session_path, method: :delete
             %li
-              %button.btn.btn-primary.btn-sm#tweet-button{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "モーダルウィンドウ実装予定","type"=> "submit"}
+              %button.btn.btn-primary#tweet-button{"data-target" => "#tweetModal", "data-toggle" => "modal", :type => "button"}
                 Tweet
+              / モーダル・ダイアログ
+              #tweetModal.modal.fade{:tabindex => "-1"}
+                .modal-dialog
+                  .modal-content
+                    .modal-header.text-center
+                      %button.close{"data-dismiss" => "modal", :type => "button"}
+                        %span ×
+                      %h4.modal-title ツイートする
+                    .modal-body
+                      = render 'shared/tweet_form'
+
           - else
             %li= link_to "Log in", new_user_session_path
 
