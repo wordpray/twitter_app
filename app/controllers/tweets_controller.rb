@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-before_action :set_users, only: [:home, :create]
+before_action :set_users, only: [:home, :create, :search]
 
   def home
     if user_signed_in?
@@ -11,6 +11,11 @@ before_action :set_users, only: [:home, :create]
   end
 
   def about
+  end
+
+  def search
+    @tweets_keywords = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    @likes = Like.where(tweet_id: params[:tweet_id])
   end
 
   def create

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   get '/about', to:'tweets#about'
+  get '/tweets/search', to:'tweets#search'
 end
