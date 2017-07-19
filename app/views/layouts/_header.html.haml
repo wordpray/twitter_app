@@ -10,8 +10,8 @@
         %ul.nav.navbar-nav.navbar-right.mr-auto
           - if user_signed_in?
             %li
-              %form.form-inline#search-form
-                %input.form-control.search-query{type: "text", placeholder: "Search","data-placement" => "bottom", "data-toggle" => "tooltip", :title => "インクリメンタルサーチ実装予定"}
+              = form_tag tweets_search_path, method: :get, class: "form-inline", id: "search-form" do
+                %input.form-control.search-query{name: "keyword", placeholder: "Search", type: "text", value: ""}/
                 %button.fa.fa-search.fa-x{type: "submit", aria:{hidden:"true"}}
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}

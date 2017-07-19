@@ -1,0 +1,11 @@
+.row
+  %aside.col-md-3
+    %section.recommend_info
+      = render 'shared/recommend_info', users: @recommend_users
+  %aside.col-md-6
+    - if @tweets_keywords.any?
+      = render 'shared/tweet', tweets: @tweets_keywords
+    -else
+      .search_results
+        %p 検索結果はありませんでした。
+  %aside.col-md-3
