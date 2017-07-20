@@ -49,6 +49,9 @@ before_action :set_users, only: [:home, :create, :search]
   end
 
   def set_users
-    @recommend_users = User.all.limit(5)
+    followings = current_user.following
+    following_ids = followings.pluck(:id)
+    ids = following_ids.push(current_user.id)
+    @recommend_users =  User.all.where.not(id: ids).limit(5)
   end
 end
