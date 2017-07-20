@@ -14,8 +14,12 @@ before_action :set_users, only: [:home, :create, :search]
   end
 
   def search
-    @tweets_keywords = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    @tweets_keywords = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").limit(10)
     @likes = Like.where(tweet_id: params[:tweet_id])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
