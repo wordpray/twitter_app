@@ -7,7 +7,7 @@
     .col-md-6.sign-up__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
-          = f.label :email,"名前/Test ID: yamada@sample.com"
+          = f.label :email,"名前/Test ID: test@sample.com"
           %br/
           = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "email"
 
