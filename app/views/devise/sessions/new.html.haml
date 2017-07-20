@@ -1,25 +1,25 @@
 - provide(:title, "Log in")
 
-.container.sign-up
+.container.sign-in
   %h2 Log in
   .row
     .col-md-3
-    .col-md-6.sign-up__form
+    .col-md-6.sign-in__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
-          = f.label :email,"名前/Test ID: test@sample.com"
+          = f.label :email,"名前 | Test ID: test@sample.com"
           %br/
           = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "email"
 
         .field
-          = f.label :password, "パスワード/Test PW: 12345678"
+          = f.label :password, "パスワード | Test PW: 12345678"
           %br/
           = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "password"
         - if devise_mapping.rememberable?
           .field.checkbox-inline
             = f.check_box :remember_me
             = f.label :remember_me
-        .actions
+        .actions.clearfix
           = f.submit "Log in", class: "btn btn-primary"
-          = render "devise/shared/links"
+      = render "devise/shared/links"
     .col-md-3

@@ -1,16 +1,29 @@
-.container.sign-up{
+.container.sign-in{
   margin-top: 10px;
-  .sign-up__form{
-    margin: 5px;
+  .sign-in__form{
+    margin: 5px 5px 15px;
     .checkbox-inline{
       margin-left: 20px;
       }
+    .field{
+      margin: 10px 0 10px;
+    }
     .actions{
-      margin-bottom: 30px;
-      a{
-      font-size: 14px;
+      margin-bottom: 20px;
+      .btn{
+      margin-bottom: 10px;
+      margin-right: 10px;
+      width: 150px;
       float: right;
     }
+    .clearfix:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    }
+    a{
+      margin-bottom: 20px;
     }
   }
 }
