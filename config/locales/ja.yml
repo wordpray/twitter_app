@@ -5,6 +5,7 @@ ja:
     email: メールアドレス
     password: パスワード
     password_confirmation : パスワードの確認
+    current_password: パスワード認証
     group_id: グループ名
     user: ユーザー
     introduction: 自己紹介
