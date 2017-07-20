@@ -4,3 +4,21 @@
     margin-top: 20px;
   }
 }
+
+.search_lists{
+    width: 180px;
+    margin: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    overflow: hidden;
+    li{
+      padding: 5px 2px 5px;
+      margin-right: 2px;
+    }
+    li:hover{
+      background-color: #fff;
+      cursor: pointer;
+    }
+}
