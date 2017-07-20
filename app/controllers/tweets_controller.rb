@@ -5,7 +5,7 @@ before_action :set_users, only: [:home, :create, :search]
     if user_signed_in?
       @user = current_user
       @tweet = current_user.tweets.new if user_signed_in?
-      @feed_items = current_user.feed
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 30)
       @likes = Like.where(tweet_id: params[:tweet_id])
     end
   end
@@ -14,7 +14,7 @@ before_action :set_users, only: [:home, :create, :search]
   end
 
   def search
-    @tweets_keywords = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    @tweets_keywords = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").paginate(page: params[:page], per_page: 30)
     @likes = Like.where(tweet_id: params[:tweet_id])
     respond_to do |format|
       format.html
