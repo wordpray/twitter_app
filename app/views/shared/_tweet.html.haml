@@ -10,3 +10,4 @@
         - if user_signed_in? && current_user.id == tweet.user_id
           = link_to "delete", tweet_path(tweet.id), method: :delete, data: { confirm: "You sure?" }, class: "span delete"
       = render 'likes/like', tweet: tweet, likes: @likes
+= will_paginate tweets

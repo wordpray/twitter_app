@@ -7,7 +7,7 @@ before_action :set_users, only: [:show, :following, :followers, :likes]
 
   def show
     @user = User.find(params[:id])
-    @tweets = @user.tweets
+    @tweets = @user.tweets.paginate(page: params[:page], per_page: 30)
     @likes = Like.where(tweet_id: params[:tweet_id])
   end
 
@@ -28,7 +28,7 @@ before_action :set_users, only: [:show, :following, :followers, :likes]
   def likes
     @title = "Likes"
     @user = User.find(params[:id])
-    @likes = @user.like_tweets
+    @likes = @user.like_tweets.paginate(page: params[:page], per_page: 30)
     render 'show_likes'
   end
 
