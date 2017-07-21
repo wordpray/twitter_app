@@ -1,2 +1,2 @@
-$("#like-buttons").html("<%= escape_javascript(render(partial: 'likes/like', locals: { tweet: @tweet, likes: @likes, like: @like})) %>");
+$("#like-button_<%= @tweet.id %>").html("<%= escape_javascript(render(partial: 'likes/like', locals: { tweet: @tweet, likes: @likes, like: @like})) %>");
 
