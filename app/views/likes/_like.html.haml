@@ -1,10 +1,10 @@
 - if tweet.like_user(current_user.id)
-  = button_to tweet_like_path(likes, tweet_id:tweet.id), method: :delete, id:"like-button", remote: true do
-    = image_tag("like.png", size:"15x15", alt:"Like button", id: "like-button")
+  = button_to tweet_like_path(likes, tweet_id: tweet.id), method: :delete, remote: true do
+    = image_tag("like.png", size:"15x15", alt:"Like button")
     %span
       = tweet.likes_count
--else
-  = button_to tweet_likes_path(tweet.id),method: :post,  id:"like-button", remote: true do
-    = image_tag("notlike.png", size:"15x15", alt:"Unlike button", id: "like-button")
+- else
+  = button_to tweet_likes_path(tweet), remote: true do
+    = image_tag("notlike.png", size:"15x15", alt:"Like button")
     %span
       = tweet.likes_count
