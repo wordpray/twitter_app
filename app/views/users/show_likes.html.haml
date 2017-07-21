@@ -5,10 +5,11 @@
     %section.user_info
       = render 'shared/others_info', user: @user
     %section.stats
-      = render 'shared/stats'
+      = render 'shared/stats', user: @user
   .col-md-6
     %section.detail-info
-      = render 'profile_header'
+      = render 'profile_header', user: @user
+      = render 'shared/follow_form', user: @user if user_signed_in?
       %h3= @title
       -if @likes.any?
         = render 'shared/tweet', tweets: @likes
