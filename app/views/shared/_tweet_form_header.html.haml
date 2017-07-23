@@ -1,0 +1,5 @@
+.tweet_form#tweet_form
+  = form_for(@tweet) do |f|
+    = f.text_area :content, class: "field form-control", rows: "5", maxlength: "140", placeholder: "What are you doing now?"
+    =  f.file_field :image, class: "image_file"
+    = f.submit "Tweet", class: "btn btn-primary", id: "tweet-button"
