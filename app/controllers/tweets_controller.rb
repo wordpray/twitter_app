@@ -26,7 +26,12 @@ before_action :set_users, only: [:home, :create, :search]
     @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
       flash[:success] = "ツイートが送信されました。"
-      redirect_to root_url
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 30)
+      @likes = Like.where(tweet_id: params[:tweet_id])
+      respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+      end
     else
       @feed_items = []
       render action: "home"

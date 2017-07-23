@@ -1,0 +1,4 @@
+$("#tweets-feed").html("<%= escape_javascript(render('shared/tweet', tweets: @feed_items)) %>");
+$('#tweet_form #tweet_content').val('');
+$("#tweets").html('<%= current_user.tweets.count %>');
+

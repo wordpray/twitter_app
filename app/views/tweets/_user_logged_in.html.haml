@@ -9,7 +9,8 @@
       = render 'shared/tweet_form'
     - if @feed_items.any?
       %h3 Tweet Feed
-      = render 'shared/tweet', tweets: @feed_items
+      #tweets-feed
+        = render 'shared/tweet', tweets: @feed_items
   .col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users
