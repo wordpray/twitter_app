@@ -11,4 +11,5 @@
           = link_to "delete", tweet_path(tweet.id), method: :delete, data: { confirm: "You sure?" }, class: "span delete"
       %i{id: "like-button_#{tweet.id}"}
         = render 'likes/like', tweet: tweet, likes: @likes
-= will_paginate tweets
+#infinite-scrolling
+  = will_paginate tweets
