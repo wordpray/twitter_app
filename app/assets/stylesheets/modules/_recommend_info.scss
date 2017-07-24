@@ -16,10 +16,24 @@
       width: 40px;
       height: 40px;
     }
+    .follow_form{
+      width: 100px;
+      margin-top: 5px;
+      margin-left: 50px;
+      .follow{
+        border-radius: 40px;
+
+      }
+    }
     }
    }
    .message{
       text-align: center;
       padding: 10px;
     }
+    .btn-primary{
+          background-color: #fff;
+          border-color: #1DA1F2;
+          color: #1DA1F2;
+        }
 }
