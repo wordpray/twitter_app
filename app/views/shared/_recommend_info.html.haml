@@ -3,6 +3,6 @@
   - users.each do |user|
     %li
       = render 'shared/avatar_judge', user: user
-      %span.user= link_to user.name, user
+      %span.user= link_to user.nickname, user
       = render 'shared/follow_form', user: user if user_signed_in?
 = link_to "知り合いを見つけよう", users_path, class: "message fa fa-users", aria:{hidden: "true"}

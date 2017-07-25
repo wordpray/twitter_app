@@ -2,7 +2,7 @@
   - tweets.each do |tweet|
     %li{:id => "tweet-#{tweet.id}"}
       = render 'shared/avatar_judge', user: tweet.user
-      %span.user= link_to tweet.user.name, tweet.user
+      %span.user= link_to tweet.user.nickname, tweet.user
       %span.content= simple_format(tweet.content)
       = image_tag tweet.image.url(:medium), class: "img" if tweet.image?
       %span.timestamp
