@@ -6,6 +6,8 @@
       = render 'shared/others_info', user: @user
     %section.stats
       = render 'shared/stats', user: @user
+    %section.introduction
+      = simple_format(@user.introduction)
   .col-md-6
     %section.detail-info
       = render 'profile_header', user: @user
