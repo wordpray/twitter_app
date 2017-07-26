@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :tweets, only: [:create, :destroy] do
     resources :likes, only: [:create, :destroy]
+    resources :replies, only: [:new, :create]
   end
   resources :relationships, only: [:create, :destroy]
   get '/about', to:'tweets#about'
