@@ -1,11 +1,15 @@
 # 作成目的
-tech::campエキスパートコースの最終課題として、目コピでTwitterを作成します。
+Ruby on Railsの勉強でTwitterを作成します。
+
+# ホーム画面
+![ホーム画面](https://user-images.githubusercontent.com/25705890/28626282-88d2e64a-7259-11e7-932d-5551b4936dfe.png)
 
 # 要件定義｜機能
   * メールアドレスで会員登録
   * 140文字以内で「つぶやき」を投稿できる
   * フォロー機能
   * 「つぶやき」をいいね！できる
+  * Tweetに返信機能
 
 # DB設計
 
@@ -24,7 +28,7 @@ tech::campエキスパートコースの最終課題として、目コピでTwit
 ### Association
 
 * has_many : tweets, dependent: :destroy
-* has_many :likes, dependent: :destroy
+* has_many :likes
 * has_many :like_tweets, through: :likes, source: :tweet
 * has_many :active_relationships, class_name: "Relationship",foreign_key: "follower_id", dependent: :destroy
 * has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -33,16 +37,18 @@ tech::campエキスパートコースの最終課題として、目コピでTwit
 
 ## tweets tables
 
-| column     | Type        | Option                    |
-|:-----------|------------:|:-------------------------:|
-|  content   | text        | null: false               |
-|  image     | string      |                           |
+| column           | Type        | Option                    |
+|:-----------------|------------:|:-------------------------:|
+|  content         | text        | null: false               |
+|  image           | string      |                           |
+|  likes_count     | integer     |                           |
+|  reply_nickname  | string      |                           |
+|  reply_tweet     | integer     |                           |
 
 ### Association
 
 * belongs_to :user
 * has_many :likes, dependent: :destroy
-* has_many :like_users, through: :likes, source: :user
 
 ## Relationships table
 
@@ -65,4 +71,4 @@ tech::campエキスパートコースの最終課題として、目コピでTwit
 
 ### Association
 * belongs_to : user
-* belongs_to : tweet
+* belongs_to : tweet, counter_cache: :likes_count
