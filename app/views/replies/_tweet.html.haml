@@ -1,0 +1,9 @@
+.user_avatar
+.user_info
+  %span.user= link_to @tweet.user.name, @tweet.user
+  %span.nickname= "@#{@tweet.user.nickname}"
+  %span.timestamp
+    Posted #{time_ago_in_words(@tweet.created_at)} ago.
+  %span.content
+    = @tweet.content
+    = image_tag @tweet.image.url if @tweet.image?
