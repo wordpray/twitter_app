@@ -1,0 +1,8 @@
+= form_for [@tweet, @reply], url: tweet_replies_path do |f|
+  .field
+    = f.hidden_field :reply_nickname, value: @reply.reply_nickname
+    = f.hidden_field :reply_tweet, value: @reply.reply_tweet
+    = f.text_area :content, placeholder: "Enter your reply..."
+  = f.submit "Reply", class: "btn btn-primary"
+  %span.picture
+    = f.file_field :image
