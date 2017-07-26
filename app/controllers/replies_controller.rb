@@ -4,7 +4,6 @@ class RepliesController < ApplicationController
 
     @before_reply = Tweet.find(@tweet.reply_tweet) if @tweet.reply_tweet.present?
     @after_replies = Tweet.where(reply_tweet: @tweet.id)
-
     @reply = current_user.tweets.new(reply_nickname: @tweet.user.nickname, reply_tweet: @tweet.id)
   end
 
@@ -16,7 +15,7 @@ class RepliesController < ApplicationController
     else
       flash[:danger] = "Reply danger"
     end
-    redirect_to root_url
+    redirect_to action: "new"
   end
 
   private
