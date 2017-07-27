@@ -5,6 +5,7 @@ $(document).on('turbolinks:load', function(){
     var LeftoverValueLength = 140 - thisValueLength;
 
     if (LeftoverValueLength > 10){
+      $('.count').css('color', '');
       $('.count').html(LeftoverValueLength);
     }else{
       $('.count').html(LeftoverValueLength).css('color', 'red');
@@ -16,6 +17,7 @@ $(document).on('turbolinks:load', function(){
     var LeftoverValueLength = 140 - thisValueLength;
     
     if (LeftoverValueLength > 10){
+      $('.count').css('color', '');
       $('.count').html(LeftoverValueLength);
     }else{
       $('.count').html(LeftoverValueLength).css('color', 'red');
