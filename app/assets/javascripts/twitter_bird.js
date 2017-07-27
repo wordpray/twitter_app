@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
         inputKey = ""
       }
       if (inputKey == facebookCommand){
-        $(".twitter-logo").attr("src", "assets/facebook.png");
+        $(".twitter-logo").attr("src", "facebook.png");
         inputKey = ""
       }
       if (inputKey == instagramCommand){
