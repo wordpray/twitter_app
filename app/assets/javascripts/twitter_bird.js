@@ -61,16 +61,16 @@ $(document).on('turbolinks:load', function(){
         inputKey = ""
       }
       if (inputKey == instagramCommand){
-        $(".twitter-logo").attr("src", "assets/instagram.png");
+        $(".twitter-logo").attr("src", "instagram.png");
         inputKey = ""
       }
       if (inputKey == mercariCommand){
-        $(".twitter-logo").attr("src", "assets/mercari.png");
+        $(".twitter-logo").attr("src", "mercari.png");
         inputKey = ""
       }
       if (inputKey == twitterCommand){
         console.log(inputKey);
-        $(".twitter-logo").attr("src", "assets/twitter.png");
+        $(".twitter-logo").attr("src", "twitter.png");
         inputKey = ""
       }
     });
