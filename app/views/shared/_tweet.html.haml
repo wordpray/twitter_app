@@ -3,7 +3,9 @@
     %li{:id => "tweet-#{tweet.id}"}
       = render 'shared/avatar_judge', user: tweet.user
       %span.user= link_to tweet.user.nickname, tweet.user
-      .content= simple_format(tweet.content)
+      .content
+        = link_to_if(tweet.reply_nickname,"@#{tweet.reply_nickname}", new_tweet_reply_path(tweet)){}
+        = simple_format(tweet.content)
       = image_tag tweet.image.url(:medium), class: "img" if tweet.image?
       %span.timestamp
         Posted #{time_ago_in_words(tweet.created_at)} ago.

@@ -2,9 +2,10 @@
   .user_avatar
     = render 'shared/avatar_judge', user: reply.user
   .user_info
-    %span.user= link_to reply.user.name, reply.user
-    %span.nickname= "@#{reply.user.nickname}"
-    .content= simple_format(reply.content)
+    %span.user= link_to reply.user.nickname, reply.user
+    .content
+      = link_to_if(reply.reply_nickname,"@#{reply.reply_nickname}", new_tweet_reply_path(reply)){}
+      = simple_format(reply.content)
     = image_tag reply.image.url(:medium), class: "img" if reply.image?
     %span.timestamp
       Posted #{time_ago_in_words(reply.created_at)} ago.
