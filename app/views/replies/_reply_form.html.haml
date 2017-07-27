@@ -7,3 +7,4 @@
     = f.text_area :content,rows: "3", maxlength: "140",  placeholder: "Reply tweets", class: "form-control"
     = f.file_field :image, class: "image_file"
   = f.submit "Reply", class: "btn btn-primary", id: "tweet-button"
+  %span.count 140

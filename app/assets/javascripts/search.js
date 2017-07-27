@@ -1,4 +1,5 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
+  $(function(){
 
   var search_list = $(".search_lists");
 
@@ -48,4 +49,6 @@ $(function(){
     $('.search_list').empty();
     $('.search_lists').remove();
   })
+});
+
 });

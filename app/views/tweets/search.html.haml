@@ -2,7 +2,7 @@
   %aside.col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users
-  %aside.col-md-6
+  %aside.col-md-5.col-md-offset-1
     - if @tweets_keywords.any?
       = render 'shared/tweet', tweets: @tweets_keywords
     -else

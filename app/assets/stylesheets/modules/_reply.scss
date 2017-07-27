@@ -70,6 +70,7 @@
     }
   }
   .reply_form{
+    position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
     border-top: 1px solid #e8e8e8;
@@ -93,6 +94,12 @@
       width: 220px;
       border: none;
       margin-left: 20px;
+    }
+    .count{
+      float: right;
+      position: relative;
+      top: -10px;
+      right: 10px;
     }
     #tweet-button{
       float: right;
