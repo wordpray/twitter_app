@@ -1,0 +1,11 @@
+.user_avatar
+  = render 'shared/avatar_judge', user: tweet.user
+.user_info
+  %span.user= link_to tweet.user.name, tweet.user
+  %span.nickname= "@#{tweet.user.nickname}"
+  %span.content=simple_format(tweet.content)
+  = image_tag tweet.image.url(:medium), class: "img" if tweet.image?
+  %span.timestamp
+    Posted #{time_ago_in_words(tweet.created_at)} ago.
+  %i{id: "like-button_#{tweet.id}"}
+    = render 'likes/like', tweet: tweet, likes: likes

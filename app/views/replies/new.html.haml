@@ -1,17 +1,24 @@
-.reply_container
-  %h3 Reply to #{@tweet.user.nickname}
-  
-  .before_reply
-    - if @before_reply.present?
-      = render 'reply', reply: @before_reply
+.row
+  %aside.col-md-3
+    %section.user_info
+      = render 'shared/user_info'
+    %section.stats
+      = render 'shared/stats'
+  .col-md-6
+    .reply_container
+      %h3 Reply to #{@tweet.user.nickname}
+      .before_reply
+        - if @before_reply.present?
+          = render 'reply', reply: @before_reply
+      .tweet
+        = render 'from_tweet', tweet: @tweet, likes: @likes
+      .reply_form#reply_form
+        = render 'reply_form'
+      .after_replies
+        - if @after_replies.any?
+          - @after_replies.each do |reply|
+            = render 'reply', reply: reply
+  .col-md-3
+    %section.recommend_info
+      = render 'shared/recommend_info', users: @recommend_users
 
-  .micropost
-    = render 'tweet'
-
-  .reply_form
-    = render 'reply_form'
-      
-  .after_replies
-    - if @after_replies.any?
-      - @after_replies.each do |reply|
-        = render 'reply', reply: reply
