@@ -1,8 +1,8 @@
 $(function(){
   function buildHtml(data){
-    var html = `<li>
-                  <p>${data.results[0].reply}</p>
-                </li>`
+    var html = '<li>'+
+                  data.results[0].reply +
+                '</li>'
     return html;
   }
 
