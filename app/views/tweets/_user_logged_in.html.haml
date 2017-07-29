@@ -4,6 +4,7 @@
       = render 'shared/user_info'
     %section.stats
       = render 'shared/stats'
+    = render 'shared/talk_api'
   .col-md-6
     %section.tweet_form
       = render 'shared/tweet_form'
@@ -14,4 +15,3 @@
   .col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users
-    = render 'shared/talk_api'
