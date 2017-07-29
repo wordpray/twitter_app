@@ -1,16 +1,14 @@
 class TweetsController < ApplicationController
-before_action :set_users, only: [:home, :create, :search]
+  before_action :set_likes,           only: [:home, :search, :create]
+  before_action :set_recommend_users, only: [:home, :search, :create]
 
   def home
-    if user_signed_in?
-      @user = current_user
-      @tweet = current_user.tweets.new if user_signed_in?
-      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 30)
-      @likes = Like.where(tweet_id: params[:tweet_id])
-      respond_to do |format|
-        format.html
-        format.js
-      end
+    @user       = current_user
+    @tweet      = current_user.tweets.new
+    @feed_items = current_user.feed.paginate(page: params[:page], per_page: 30)
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
@@ -18,8 +16,7 @@ before_action :set_users, only: [:home, :create, :search]
   end
 
   def search
-    @tweets_keywords = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").paginate(page: params[:page], per_page: 20)
-    @likes = Like.where(tweet_id: params[:tweet_id])
+    @tweets_keywords  = Tweet.where('content LIKE(?)', "%#{params[:keyword]}%").paginate(page: params[:page], per_page: 20)
     respond_to do |format|
       format.html
       format.json
@@ -27,27 +24,28 @@ before_action :set_users, only: [:home, :create, :search]
   end
 
   def create
-    @tweet = current_user.tweets.new(tweet_params)
+    @tweet            = current_user.tweets.new(tweet_params)
+
     if @tweet.save
       flash[:success] = "ツイートが送信されました。"
-      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 30)
-      @likes = Like.where(tweet_id: params[:tweet_id])
+      @feed_items     = current_user.feed.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
-      format.html { redirect_to root_url }
-      format.js
+        format.html { redirect_to root_url }
+        format.js
       end
     else
-      @feed_items = []
+      flash[:danger]  = "ツイートに失敗しました。"
+      @feed_items     = []
       render action: "home"
     end
   end
 
   def destroy
-    @tweet = current_user.tweets.find_by(id:params[:id])
+    @tweet            = current_user.tweets.find_by(id:params[:id])
     redirect_to root_url if @tweet.nil?
 
     @tweet.destroy
-    flash[:success] = "Tweet deleted"
+    flash[:success]   = "Tweet deleted"
     redirect_to request.referrer || root_url
   end
 
@@ -57,10 +55,14 @@ before_action :set_users, only: [:home, :create, :search]
     params.require(:tweet).permit(:content, :image)
   end
 
-  def set_users
-    followings = current_user.following
-    following_ids = followings.pluck(:id)
-    ids = following_ids.push(current_user.id)
+  def set_likes
+    @likes           = Like.where(tweet_id: params[:tweet_id])
+  end
+
+  def set_recommend_users
+    followings       = current_user.following
+    following_ids    = followings.pluck(:id)
+    ids              = following_ids.push(current_user.id)
     @recommend_users =  User.all.where.not(id: ids).limit(5)
   end
 end
