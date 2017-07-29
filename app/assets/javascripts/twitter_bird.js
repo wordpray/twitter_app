@@ -9,6 +9,7 @@ $(document).on('turbolinks:load', function(){
                    big:        "big",
                    small:      "small",
                    return:     "return",
+                   talk:     "talk with me",
                    facebook:   "facebook",
                    instagram:  "instagram",
                    mercari:    "marcari",
@@ -55,6 +56,13 @@ $(document).on('turbolinks:load', function(){
       if (inputKey == command.return){
         $(twitter_logo).css({'width':'30px',
                              'height':'30px'});
+        inputKey = ""
+      }
+      if (inputKey == command.talk){
+        $(twitter_logo).fadeOut("slow");
+        setTimeout(function(){
+          $('.talk_api').css("display", "block");
+        }, 1500);
         inputKey = ""
       }
       if (inputKey == command.facebook){
