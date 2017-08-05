@@ -10,14 +10,18 @@ class RepliesController < ApplicationController
   end
 
   def create
-    @tweet = current_user.tweets.new(tweet_params)
+    @tweet           = current_user.tweets.new(tweet_params)
 
     if @tweet.save
-      flash[:success] = "返信が送信されました。"
+      @after_replies = Tweet.where(reply_tweet: params[:tweet_id])
+      respond_to do |format|
+        format.html {redirect_to action: "new"}
+        format.js
+      end
     else
       flash[:danger] = "返信に失敗しました。"
+      redirect_to action: "new"
     end
-    redirect_to action: "new"
   end
 
   private
@@ -27,9 +31,9 @@ class RepliesController < ApplicationController
   end
 
   def set_recommend_users
-    followings = current_user.following
-    following_ids = followings.pluck(:id)
-    ids = following_ids.push(current_user.id)
+    followings       = current_user.following
+    following_ids    = followings.pluck(:id)
+    ids              = following_ids.push(current_user.id)
     @recommend_users =  User.all.where.not(id: ids).limit(5)
   end
 end
