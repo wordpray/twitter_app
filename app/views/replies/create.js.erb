@@ -1,0 +1,3 @@
+$("#replies_feed").html("<%= escape_javascript(render('replies_feed', replies: @after_replies)) %>");
+$('#reply_form #tweet_content').val('');
+
