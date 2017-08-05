@@ -27,7 +27,6 @@ class TweetsController < ApplicationController
     @tweet            = current_user.tweets.new(tweet_params)
 
     if @tweet.save
-      flash[:success] = "ツイートが送信されました。"
       @feed_items     = current_user.feed.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html { redirect_to root_url }
