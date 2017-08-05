@@ -15,9 +15,9 @@
       .reply_form#reply_form
         = render 'reply_form'
       .after_replies
+        #replies_feed
         - if @after_replies.any?
-          - @after_replies.each do |reply|
-            = render 'reply', reply: reply
+          = render 'replies_feed', replies: @after_replies
   .col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users

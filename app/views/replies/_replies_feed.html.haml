@@ -1,0 +1,16 @@
+- replies.each do |reply|
+  .reply
+    .user_avatar
+      = render 'shared/avatar_judge', user: reply.user
+    .user_info
+      %span.user= link_to reply.user.nickname, reply.user
+      .content
+        = link_to_if(reply.reply_nickname,"@#{reply.reply_nickname}", new_tweet_reply_path(reply)){}
+        = simple_format(reply.content)
+      = image_tag reply.image.url(:medium), class: "img" if reply.image?
+      %span.timestamp
+        Posted #{time_ago_in_words(reply.created_at)} ago.
+        - if user_signed_in? && current_user.id == reply.user_id
+          = link_to "delete", tweet_path(reply.id), method: :delete, data: { confirm: "You sure?" }, class: "span delete"
+      %i{id: "like-button_#{reply.id}"}
+        = render 'likes/like', tweet: reply, likes: @likes
