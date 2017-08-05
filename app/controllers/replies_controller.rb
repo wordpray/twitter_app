@@ -1,4 +1,5 @@
 class RepliesController < ApplicationController
+  before_action :set_likes,           only: :create
   before_action :set_recommend_users, only:[:new, :create]
   
   def new
@@ -28,6 +29,10 @@ class RepliesController < ApplicationController
 
   def tweet_params
     params.require(:tweet).permit(:reply_nickname, :reply_tweet, :content, :image)
+  end
+
+  def set_likes
+    @likes           = Like.where(tweet_id: params[:tweet_id])
   end
 
   def set_recommend_users
