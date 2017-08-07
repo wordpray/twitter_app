@@ -2,10 +2,9 @@
 
 aside {
   section.user_info {
+    background-color: #fff;
     margin-top: 10px;
-    padding: 10px 0;
     .user-wallpaper{
-      border-radius: 3px;
       width: 100%;
       height: 100px;
       position: relative;
@@ -54,10 +53,10 @@ aside {
 }
 
 .stats {
+  background-color: #fff;
   overflow: auto;
   margin-top: 0;
-  margin-bottom: 10px;
-  padding: 0;
+  padding: 5px;
   a {
     float: left;
     padding: 0 10px;
@@ -78,9 +77,13 @@ aside {
 }
 
 .introduction{
-  padding: 2px 2px 2px 0;
+  background-color: #fff;
+  padding: 10px 5px 5px 0;
   font-size: 12px;
   color: #3a3939;
+  p{
+    padding-left: 5px;
+  }
 }
 
 .user_avatars {

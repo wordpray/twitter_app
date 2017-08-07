@@ -2,10 +2,10 @@
   %aside.col-md-3
     %section.recommend_info
       = render 'shared/recommend_info', users: @recommend_users
-  %aside.col-md-5.col-md-offset-1
+  %aside.col-md-6.feed_contents
     - if @tweets_keywords.any?
       = render 'shared/tweet', tweets: @tweets_keywords
     -else
       .search_results
         %p 検索結果はありませんでした。
-  %aside.col-md-3
+  %aside.col-md-2
