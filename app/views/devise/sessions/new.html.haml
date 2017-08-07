@@ -1,10 +1,10 @@
 - provide(:title, "Log in")
 
 .container.sign-in
-  %h2 Log in
   .row
     .col-md-3
     .col-md-6.sign-in__form
+      %h2 Log in
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           = f.label :email,"名前 | Test ID: test@sample.com"
