@@ -1,9 +1,9 @@
 - provide(:title, "Edit")
 
-%h2 Edit #{resource_name.to_s.humanize}
-
 .row
-  .col-md-6.col-md-offset-3
+  .col-md-3
+  .col-md-6.edit-profile__background
+    %h2 Edit #{resource_name.to_s.humanize}
     .section.edit-profile__form
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = devise_error_messages!
@@ -78,3 +78,4 @@
       %p
         退会しますか? #{button_to "Delete my account", registration_path(resource_name), data: { confirm: "え…?  本当に退会するんですか？" }, method: :delete, class: "btn btn-primary"}
     = link_to "Back", :back
+  .col-md-3

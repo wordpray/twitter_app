@@ -12,7 +12,6 @@
     %section.detail-info
       = render 'profile_header', user: @user
       = render 'shared/follow_form', user: @user if user_signed_in?
-    %h3= @title
     - if @users.any?
       .row
       - @users.each do |user|
