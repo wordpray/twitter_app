@@ -8,7 +8,7 @@
       = render 'shared/stats', user: @user
     %section.introduction
       = simple_format(@user.introduction)
-  .col-md-6
+  .col-md-6.feed_contents
     %section.detail-info
       = render 'profile_header', user: @user
       = render 'shared/follow_form', user: @user if user_signed_in?

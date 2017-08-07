@@ -4,7 +4,7 @@
     %title
       = full_title(yield(:title))
     = render 'layouts/rails_default'
-  %body
+  %body{:style => "background-color: #e6ecf0;"}
     = render 'layouts/header'
   .container
     - flash.each do |message_type, message|
