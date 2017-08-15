@@ -12,7 +12,13 @@
         - if user_signed_in? && current_user.id == tweet.user_id
           = link_to "delete", tweet_path(tweet.id), method: :delete, data: { confirm: "You sure?" }, class: "span delete"
       .action_buttons
-        = link_to image_tag("reply.jpg", size:"25x25", alt:"reply-button", class: "reply-button action_button"), new_tweet_reply_path(tweet)
+        .reply-button.action_button
+          = link_to image_tag("reply.jpg", size:"25x25", alt:"reply-button"), new_tweet_reply_path(tweet)
+          %span
+            -if tweet_replies(tweet).present?
+              = tweet_replies(tweet).count
+            -else
+              = '&nbsp;'.html_safe
         %i{id: "like-button_#{tweet.id}", class: "action_button"}
           = render 'likes/like', tweet: tweet, likes: @likes
 #infinite-scrolling
