@@ -11,7 +11,7 @@
         - if @before_reply.present?
           = render 'reply', reply: @before_reply
       .tweet
-        = render 'from_tweet', tweet: @tweet, likes: @likes
+        = render 'from_tweet', tweet: @from_tweet, likes: @likes
       .reply_form#reply_form
         = render 'reply_form'
       .after_replies

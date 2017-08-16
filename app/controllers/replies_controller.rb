@@ -3,10 +3,10 @@ class RepliesController < ApplicationController
   before_action :set_recommend_users, only:[:new, :create]
   
   def new
-    @tweet         = Tweet.find(params[:tweet_id])
-    @before_reply  = Tweet.find(@tweet.reply_tweet) if @tweet.reply_tweet.present?
-    @after_replies = Tweet.where(reply_tweet: @tweet.id)
-    @reply         = current_user.tweets.new(reply_nickname: @tweet.user.nickname, reply_tweet: @tweet.id)
+    @from_tweet         = Tweet.find(params[:tweet_id])
+    @before_reply  = Tweet.find(@from_tweet.reply_tweet) if @from_tweet.reply_tweet.present?
+    @after_replies = Tweet.where(reply_tweet: @from_tweet.id)
+    @reply         = current_user.tweets.new(reply_nickname: @from_tweet.user.nickname, reply_tweet: @from_tweet.id)
     @likes         = Like.where(tweet_id: params[:tweet_id])
   end
 
