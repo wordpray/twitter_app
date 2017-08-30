@@ -1,25 +1,17 @@
 ## 作成目的
-Ruby on Railsの勉強でTwitterを作成します。
+Ruby on Railsの学習でTwitterを作成
 
-## ホーム画面
-![ホーム画面](https://user-images.githubusercontent.com/25705890/28626282-88d2e64a-7259-11e7-932d-5551b4936dfe.png)
-
-## 要件定義｜機能
+## 基本機能
   * メールアドレスで会員登録
-  * 140文字以内で「つぶやき」を投稿できる
+  * 140文字以内で「つぶやき」を投稿
   * フォロー機能
-  * 「つぶやき」をいいね！できる
-  * Tweetに返信機能
+  * いいね！機能
+  * 返信機能
+  * 検索機能
 
-## オリジナル機能
-Twitterにはない、簡単会話機能を実装してみました。
+## 追加機能
+Twitterにはない、簡単会話機能を実装
 
-### "talk with me"と入力
-Twitterbirdとの会話Windowが開く
-
-![会話Window](https://user-images.githubusercontent.com/25705890/28839270-0bb1d9a8-772e-11e7-815f-696077db1005.gif)
-
-### 会話機能
 簡単な会話を楽しむことができる
 ![会話機能](https://user-images.githubusercontent.com/25705890/28839313-2bf9cc70-772e-11e7-8212-cd08944c7a8b.gif)
 
