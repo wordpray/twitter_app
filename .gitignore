@@ -19,4 +19,4 @@
 /public/system/tweets
 /public/system/users
 
-secrets.yml
+config/secrets.yml
