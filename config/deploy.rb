@@ -53,3 +53,5 @@ end
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :linked_files, %w{ config/secrets.yml }
